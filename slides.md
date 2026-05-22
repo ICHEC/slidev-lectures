@@ -6,7 +6,7 @@ theme: academic
 background: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/3GmudSL84n4.webp
 
 # some information about your slides (markdown enabled)
-title: Some math and statistics
+title: ICHEC Component Library, A visual guide to building presentations.
 info: |
   ## Slidev Starter Template 
   Presentation slides for developers.
@@ -26,7 +26,8 @@ mdc: true
 #  ogImage: https://cover.sli.dev
 ---
 
-# Some math and statistics
+# ICHEC Components Library
+## A visual guide to building presentations.
 
 [Rajarshi Tiwari](https://github.com/rajarshitiwari)
 
@@ -104,6 +105,395 @@ h1 {
 Here is another comment.
 -->
 
+
+---
+layout: brand-title
+---
+
+# ICHEC Component Library
+A visual guide to building presentations.
+
+
+- This is `brand-title` layout, Used as follows:
+
+<br>
+
+```yaml
+---
+layout: brand-title
+---
+```
+
+- There are several built-in layouts, and a `dense` layout in the layouts folder of the repository. 
+
+---
+layout: default
+---
+
+# Banner
+- Use banners to draw attention to warnings, tips, or success messages.
+- They can also be used for other purposes.
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div>
+
+**Markdown Code**
+
+```html
+<Banner type="warning" title="Note" v-click>
+
+Always remember the **blank lines**
+inside custom components!
+
+</Banner>
+
+<Banner type="success" title="Success"
+ icon="i-mdi-check" v-click>
+
+Job successfully submitted to the queue.
+
+</Banner>
+```
+</div>
+
+<div>
+
+**Rendered Output**
+<Banner type="warning" title="Note" v-click>
+
+Always remember the **blank lines** inside custom components!
+
+</Banner>
+
+<Banner type="success" title="Success"
+ icon="i-mdi-check" v-click>
+
+Job successfully submitted to the queue.
+
+</Banner>
+
+</div>
+</div>
+
+---
+layout: default
+---
+
+# Animated Banner
+Great for revealing quiz questions or key takeaways dynamically.
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div>
+
+**Markdown Code**
+```html
+<AnimatedBanner title="Question" speed="30" v-click>
+
+- Doesn't it look better to see it being typed?
+
+- It may not necessarily work.
+
+</AnimatedBanner>
+```
+</div>
+
+<div>
+
+**Rendered Output**
+<AnimatedBanner title="Question" speed="30" v-click>
+
+- Doesn't it look better to see it being typed?
+
+- It may not necessarily work.
+
+</AnimatedBanner>
+
+</div>
+</div>
+
+---
+layout: default
+---
+
+# Text Formatting
+- Use Inline components to make specific text stand out without breaking the flow.
+- See what **doesn't** work?
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div>
+
+**Markdown Code**
+```html
+Welcome to the <Gt from="blue" to="green">Future</Gt>.
+
+Here is a standard paragraph with a 
+<TextBox color="yellow" shadow="true">Highlight</TextBox> 
+dropped right in the middle of it.
+
+<br>
+
+Let's see how a list works with
+ <Gt from="blue" to="red">Gradient Text (Gt)</Gt>
+- <Gt from="blue" to="yellow">First</Gt> item
+- <Gt from="blue" to="yellow">Second</Gt> item
+
+<Gt from="blue" to="yellow">
+
+Some math $x^2$
+
+</Gt>
+```
+</div>
+
+<div>
+
+**Rendered Output**
+
+Welcome to the <Gt from="blue" to="green">Future</Gt>.
+
+Here is a standard paragraph with a <TextBox color="yellow" shadow="true">Highlight</TextBox> dropped right in the middle of it.
+
+<br>
+
+Let's see how a list works with <Gt from="blue" to="red">Gradient Text (Gt)</Gt>
+- <Gt from="blue" to="yellow">First</Gt> item
+- <Gt from="blue" to="yellow">Second</Gt> item
+
+<Gt from="blue" to="yellow">
+
+Some math $x^2$
+
+</Gt>
+
+
+</div>
+</div>
+
+---
+layout: default
+---
+
+# V-CLICKS
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+
+<div>
+
+**Markdown Code**
+```html
+<v-clicks>
+
+- In slidev the slides advance in units of clicks.
+- By default we have one click per slide.
+- Adding `v-click` attribute to components,
+or standalone adds a step in transition.
+- Do you see it? You can use `v-clicks`
+for automated clicks in list like objects.
+
+</v-clicks>
+```
+
+</div>
+
+<div>
+
+**Rendered Output**
+<v-clicks>
+
+- In slidev the slides advance in units of clicks.
+- By default we have one click per slide.
+- Adding `v-click` attribute to components, 
+or standalone adds a step in transition.
+- Do you see it? You can use `v-clicks`
+for automated clicks in list like objects.
+
+</v-clicks>
+</div>
+
+</div>
+
+---
+layout: default
+---
+
+# Code Window
+Wraps your standard markdown code blocks in a beautiful macOS-style window.
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div>
+
+**Markdown Code**
+````html
+<CodeWindow title="my_program.py" width="full">
+
+```python {1|2-4|5-6|7}
+import qse
+qsqr = qse.lattices.square(lattice_spacing=2.0,
+  repeats_x=4, repeats_y=4)
+calc = qse.calc.Pulser(**params)
+calc.qbits = qsqr
+calc.build_sequence()
+calc.calculate()
+```
+
+</CodeWindow>
+<CodeWindow title="submit.sh" width="full">
+
+```bash {1-3|4|*}
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -p compute
+srun python ./my_program.py
+```
+
+</CodeWindow>
+````
+</div>
+<div>
+
+**Rendered Output**
+
+<CodeWindow title="my_program.py" width="full">
+
+```python {1|2-4|5-6|7}
+import qse
+qsqr = qse.lattices.square(lattice_spacing=2.0,
+  repeats_x=4, repeats_y=4)
+calc = qse.calc.Pulser(**params)
+calc.qbits = qsqr
+calc.build_sequence()
+calc.calculate()
+```
+
+</CodeWindow>
+
+<CodeWindow title="submit.sh" width="full">
+
+```bash {1-3|4|*}
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -p compute
+srun python ./my_program.py
+```
+
+</CodeWindow>
+</div>
+</div>
+
+---
+layout: default
+---
+
+# Fancy Table
+Allows you to style standard markdown tables with suitable colors.
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div>
+
+**Markdown Code**
+```html
+<FancyTable color="blue" direction="horizontal">
+
+| Node | Cores | RAM  |
+|------|-------|------|
+| A1   | 64    | 256G |
+| A2   | 128   | 512G |
+
+</FancyTable>
+
+<br>
+
+<FancyTable color="green" direction="vertical">
+
+| Node | Cores | RAM  |
+|------|-------|------|
+| A1   | 64    | 256G |
+| A2   | 128   | 512G |
+
+</FancyTable>
+```
+</div>
+<div>
+
+**Rendered Output**
+<FancyTable color="blue" direction="horizontal">
+
+| Node | Cores | RAM  |
+|------|-------|------|
+| A1   | 64    | 256G |
+| A2   | 128   | 512G |
+
+</FancyTable>
+
+<br>
+
+<FancyTable color="green" direction="vertical">
+
+| Node | Cores | RAM  |
+|------|-------|------|
+| A1   | 64    | 256G |
+| A2   | 128   | 512G |
+
+</FancyTable>
+</div>
+</div>
+
+---
+layout: default
+---
+
+# Grid Layout
+The Grid component allows you to easily arrange content into columns without writing complex CSS.
+
+<Grid cols="3" gap="4" class="mt-8">
+
+<Box class="bg-blue-100 p-4 rounded-md">
+
+### Column 1
+Perfect for side-by-side images.
+
+</Box>
+
+<Box class="bg-blue-100 p-4 rounded-md">
+
+### Column 2
+Or comparing different datasets.
+
+</Box>
+
+<Box class="bg-blue-100 p-4 rounded-md">
+
+### Column 3
+Or listing distinct bullet points.
+
+</Box>
+
+</Grid>
+
+**Markdown Code:**
+```html
+<Grid cols="3" gap="4">
+  <Box>...</Box>
+  <Box>...</Box>
+  <Box>...</Box>
+</Grid>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 layout: center
 lines: true
@@ -125,72 +515,38 @@ plt.plot(x, y, '.-')
 ```
 
 ---
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```python {*|2|*}
-# step 1
-import numpy as np
-
-N = 1000
-```
-
-```python {*|2-}
-# step 2
-import numpy as np
-
-N = 1000
-
-mat = np.random.random((N, N), dtype=float)
-```
-
-```python {*|5-}
-# step 3
-import numpy as np
-
-N = 1000
-
-mat = np.random.random((N, N), dtype=float)
-mat = mat + mat.T
-mat -= 1
-
-e = np.linalg.eigvalsh(mat)
-```
-````
-
----
 
 # Components
 
+- You can use Vue components directly inside your slides.
+- Slidev provides a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly.
+- Adding your custom components is also super easy.
+
 <div grid="~ cols-2 gap-4">
+
 <div>
 
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
+**Markdown Code**
 ```html
+<Youtube id="RQWpF2Gb-gU" />
+
+<br>
+
 <Counter :count="10" />
 ```
+</div>
+
+<div>
+
+**Rendered Output**
+
+<Youtube id="RQWpF2Gb-gU" />
 
 <!-- ./components/Counter.vue -->
 <Counter :count="10" m="t-4" />
 
 Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
 </div>
-
-<div>
-<Youtube id="RQWpF2Gb-gU" />
-</div>
-
 </div>
 
 
@@ -198,7 +554,8 @@ Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
 # Motions
 
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
+- Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
+- This requires a bit of getting used to, but gives you complete freedom in defining transitions/animations.
 
 ```html
 <div
@@ -460,3 +817,4 @@ class: text-center
 [Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
 
 <PoweredBySlidev mt-10 />
+
