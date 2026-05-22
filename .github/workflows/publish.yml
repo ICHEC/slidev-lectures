@@ -19,23 +19,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Use latest checkout version to avoid Node 20 deprecation warnings
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       
-      # Use latest setup-node version to avoid Node 20 deprecation warnings
+      # 👇 1. Setup pnpm before setting up Node
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10 # You can lock to a specific version here
+      
       - uses: actions/setup-node@v6
         with:
-          node-version: '24' # 👈 Switched to 24 here
-          cache: 'yarn'
+          node-version: '24'
+          cache: 'pnpm' # 👈 2. Cache pnpm instead of yarn
           
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile # 👈 3. Switched to pnpm
         
       #- name: Install Playwright
       #  run: npx playwright install chromium
         
       - name: Build
-        run: yarn build --base "./"
+        run: pnpm build --base "./" # 👈 4. Switched to pnpm
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
