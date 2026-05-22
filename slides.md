@@ -107,24 +107,37 @@ Here is another comment.
 
 
 ---
-layout: brand-title
+layout: default
 ---
 
 # ICHEC Component Library
 A visual guide to building presentations.
 
 
-- This is `brand-title` layout, Used as follows:
+- This is `default` layout, Used as follows:
 
 <br>
 
 ```yaml
 ---
-layout: brand-title
+layout: default
 ---
 ```
 
 - There are several built-in layouts, and a `dense` layout in the layouts folder of the repository. 
+- Following is the list of available layouts -
+
+<FancyTable>
+
+|                 |               |             |              |        |            |
+|---------------- |---------------|-------------|--------------|--------|------------|
+|404              |center         | cover       | default      | end    | error      |      
+|fact             |full           | iframe-left | iframe-right | iframe | image-left |      
+|image-right      |image          | intro       | none         | quote  | section    |      
+|statement        |two-cols-header| two-cols    | figure-side  | figure | index      |
+|table-of-contents|dense          |             |              |        |            |
+
+</FancyTable>
 
 ---
 layout: default
@@ -189,6 +202,13 @@ Great for revealing quiz questions or key takeaways dynamically.
 ```html
 <AnimatedBanner title="Question" speed="30" v-click>
 
+This is plain text, **Bold text**,
+_italic text_ being typed.
+
+</AnimatedBanner>
+
+<AnimatedBanner title="Question" speed="30" v-click>
+
 - Doesn't it look better to see it being typed?
 
 - It may not necessarily work.
@@ -200,6 +220,12 @@ Great for revealing quiz questions or key takeaways dynamically.
 <div>
 
 **Rendered Output**
+
+<AnimatedBanner title="Question" speed="30" v-click>
+
+This is plain text, **Bold text**, _italic text_ being typed.
+
+</AnimatedBanner>
 <AnimatedBanner title="Question" speed="30" v-click>
 
 - Doesn't it look better to see it being typed?
@@ -207,7 +233,6 @@ Great for revealing quiz questions or key takeaways dynamically.
 - It may not necessarily work.
 
 </AnimatedBanner>
-
 </div>
 </div>
 
@@ -236,10 +261,12 @@ Let's see how a list works with
  <Gt from="blue" to="red">Gradient Text (Gt)</Gt>
 - <Gt from="blue" to="yellow">First</Gt> item
 - <Gt from="blue" to="yellow">Second</Gt> item
+Welcome to the <Gt from="blue" to="yellow">future of $x^2$</Gt> computing!
 
-<Gt from="blue" to="yellow">
+<Gt from="blue" to="yellow" block="true">
 
-Some math $x^2$
+Some math:
+$$I = \int_0^{\infty} \exp(-x^2)$$
 
 </Gt>
 ```
@@ -253,18 +280,18 @@ Welcome to the <Gt from="blue" to="green">Future</Gt>.
 
 Here is a standard paragraph with a <TextBox color="yellow" shadow="true">Highlight</TextBox> dropped right in the middle of it.
 
-<br>
-
 Let's see how a list works with <Gt from="blue" to="red">Gradient Text (Gt)</Gt>
 - <Gt from="blue" to="yellow">First</Gt> item
 - <Gt from="blue" to="yellow">Second</Gt> item
 
-<Gt from="blue" to="yellow">
+Welcome to the <Gt from="blue" to="yellow">future of $x^2$</Gt> computing!
 
-Some math $x^2$
+<Gt from="blue" to="yellow" block="true">
+
+Some math:
+$$I = \int_0^{\infty} \exp(-x^2)$$
 
 </Gt>
-
 
 </div>
 </div>
