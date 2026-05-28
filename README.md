@@ -14,17 +14,17 @@ Do not clone this repository directly. Instead, generate your own repository fro
 4. Clone *your new repository* to your local machine.
 
 ### 2. Install dependencies
-Ensure you have Node.js (v24 recommended) and Yarn installed, then run:
+Ensure you have Node.js (v24 recommended) and pnpm installed, then run:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ### 3. Start the development server
 Run the following to start a live-reloading local server:
 
 ```
-yarn dev
+pnpm slidev slides.md
 ```
 
 Open your browser to http://localhost:3030. Any changes you make to your markdown files will instantly update in the browser.
@@ -58,7 +58,8 @@ yarn dev my-other-lecture.md
 
 > [!note] Note: If you do this, you will also need to update the build script in package.json to build the correct file before deployment.
 
-## 🎨 Using ICHEC Custom Layouts & Components
+
+## 🎨 Using ICHEC Custom Layouts & Components
 
 This template includes custom ICHEC styling out-of-the-box.
 
@@ -129,3 +130,5 @@ Your slides will be live at https://ICHEC.github.io/your-repo-name a few minutes
 2. [Markdown Syntax Guide](https://sli.dev/guide/syntax)
 
 3. [Available Icons (Iconify)](https://icones.js.org/)
+
+4. [ICHEC's slidev addon](https://github.com/ICHEC/slidev-addon-ichec)

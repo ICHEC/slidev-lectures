@@ -17,6 +17,9 @@ importers:
       '@slidev/theme-seriph':
         specifier: latest
         version: 0.25.0
+      slidev-addon-ichec:
+        specifier: github:ICHEC/slidev-addon-ichec
+        version: https://codeload.github.com/ICHEC/slidev-addon-ichec/tar.gz/0bc194a488193711a187e3bb9a72d4e2211f4e14(@slidev/cli@52.15.2(@nuxt/kit@3.21.6)(@types/markdown-it@14.1.2)(@types/node@22.19.19)(@vue/compiler-sfc@3.5.34)(esbuild@0.23.1)(markdown-it@14.1.1)(postcss@8.5.15)(tsx@4.22.3))(vue@3.5.34(typescript@5.9.3))
       slidev-theme-academic:
         specifier: ^2.1.0
         version: 2.1.0(postcss@8.5.15)(vite@8.0.14(@types/node@22.19.19)(esbuild@0.23.1)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0))
@@ -2762,6 +2765,13 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  slidev-addon-ichec@https://codeload.github.com/ICHEC/slidev-addon-ichec/tar.gz/0bc194a488193711a187e3bb9a72d4e2211f4e14:
+    resolution: {tarball: https://codeload.github.com/ICHEC/slidev-addon-ichec/tar.gz/0bc194a488193711a187e3bb9a72d4e2211f4e14}
+    version: 1.0.2
+    peerDependencies:
+      '@slidev/cli': '>=0.40.0'
+      vue: '>=3.0.0'
 
   slidev-theme-academic@2.1.0:
     resolution: {integrity: sha512-C1pbu9+6mv01ZMX+HJnagO10ZqDpd3yNthWOmEviKRytjs0K9Vsue+30W9fmB72wxbVpfGpRFRWU94WFzEJDIw==}
@@ -6385,6 +6395,11 @@ snapshots:
       totalist: 3.0.1
 
   sisteransi@1.0.5: {}
+
+  slidev-addon-ichec@https://codeload.github.com/ICHEC/slidev-addon-ichec/tar.gz/0bc194a488193711a187e3bb9a72d4e2211f4e14(@slidev/cli@52.15.2(@nuxt/kit@3.21.6)(@types/markdown-it@14.1.2)(@types/node@22.19.19)(@vue/compiler-sfc@3.5.34)(esbuild@0.23.1)(markdown-it@14.1.1)(postcss@8.5.15)(tsx@4.22.3))(vue@3.5.34(typescript@5.9.3)):
+    dependencies:
+      '@slidev/cli': 52.15.2(@nuxt/kit@3.21.6)(@types/markdown-it@14.1.2)(@types/node@22.19.19)(@vue/compiler-sfc@3.5.34)(esbuild@0.23.1)(markdown-it@14.1.1)(postcss@8.5.15)(tsx@4.22.3)
+      vue: 3.5.34(typescript@5.9.3)
 
   slidev-theme-academic@2.1.0(postcss@8.5.15)(vite@8.0.14(@types/node@22.19.19)(esbuild@0.23.1)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0)):
     dependencies:
