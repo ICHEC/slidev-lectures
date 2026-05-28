@@ -6,7 +6,7 @@ theme: academic
 background: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/3GmudSL84n4.webp
 
 # some information about your slides (markdown enabled)
-title: ICHEC Component Library, A visual guide to building presentations.
+title: ICHEC Slidev Showcase, A visual guide to building presentations.
 info: |
   ## Slidev Starter Template 
   Presentation slides for developers.
@@ -26,10 +26,12 @@ mdc: true
 #  ogImage: https://cover.sli.dev
 ---
 
-# ICHEC Components Library
+# ICHEC Slidev Showcase
 ## A visual guide to building presentations.
 
 [Rajarshi Tiwari](https://github.com/rajarshitiwari)
+
+Version {{ SLIDE_VERSION }}
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/rajarshitiwari" target="_blank" class="slidev-icon-btn">
